@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get premium Apple Music and Apple TV+ subscriptions at unbeatable prices. Number 1 Apple Discount Subscription Store - OffersNest">
+  <title>OffersNest - Premium Apple Music & TV+ Subscriptions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --background: 0 0% 7%;
+      --foreground: 0 0% 98%;
+      --card: 0 0% 12%;
+      --card-foreground: 0 0% 98%;
+      --primary: 4 100% 61%;
+      --primary-foreground: 0 0% 98%;
+      --secondary: 4 90% 55%;
+      --muted: 0 0% 20%;
+      --muted-foreground: 0 0% 65%;
+      --accent: 4 100% 61%;
+      --border: 0 0% 20%;
+      --radius: 1rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: hsl(var(--background));
+      color: hsl(var(--foreground));
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+    }
+
+    .bg-gradient-primary {
+      background: linear-gradient(135deg, hsl(4 100% 61%), hsl(10 100% 55%));
+    }
+
+    .bg-gradient-card {
+      background: linear-gradient(180deg, hsl(0 0% 12% / 0.8), hsl(0 0% 8% / 0.9));
+    }
+
+    .shadow-glow {
+      box-shadow: 0 0 40px hsl(4 100% 61% / 0.3);
+    }
+
+    @keyframes glow {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.1); }
+    }
+
+    .animate-glow {
+      animation: glow 8s ease-in-out infinite;
+    }
+
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+
+    .backdrop-blur-lg { backdrop-filter: blur(16px); }
+    .backdrop-blur-sm { backdrop-filter: blur(4px); }
+
+    .card {
+      background: linear-gradient(180deg, hsl(0 0% 12% / 0.8), hsl(0 0% 8% / 0.9));
+      border: 1px solid hsl(var(--border) / 0.5);
+      border-radius: var(--radius);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px hsl(4 100% 61% / 0.3);
+    }
+
+    .card.highlighted {
+      border-color: hsl(var(--primary) / 0.5);
+      box-shadow: 0 0 40px hsl(4 100% 61% / 0.3);
+    }
+
+    .button {
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, hsl(4 100% 61%), hsl(10 100% 55%));
+      color: hsl(var(--primary-foreground));
+    }
+
+    .button-primary:hover {
+      opacity: 0.9;
+    }
+
+    .button-outline {
+      background: transparent;
+      border: 1px solid hsl(var(--border));
+      color: hsl(var(--foreground));
+    }
+
+    .button-outline:hover {
+      background: hsl(var(--card));
+    }
+
+    .button-card {
+      background: hsl(var(--card));
+      border: 1px solid hsl(var(--border));
+      color: hsl(var(--foreground));
+      width: 100%;
+    }
+
+    .button-card:hover {
+      background: hsl(var(--muted));
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: 'hsl(var(--background))',
+            foreground: 'hsl(var(--foreground))',
+            card: 'hsl(var(--card))',
+            'card-foreground': 'hsl(var(--card-foreground))',
+            primary: 'hsl(var(--primary))',
+            'primary-foreground': 'hsl(var(--primary-foreground))',
+            secondary: 'hsl(var(--secondary))',
+            muted: 'hsl(var(--muted))',
+            'muted-foreground': 'hsl(var(--muted-foreground))',
+            accent: 'hsl(var(--accent))',
+            border: 'hsl(var(--border))',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50" style="border-bottom: 1px solid hsl(var(--border) / 0.5); background: hsl(var(--background) / 0.8); backdrop-filter: blur(16px);">
+    <nav class="container mx-auto flex items-center justify-between px-6 py-4">
+      <div class="flex items-center gap-3">
+        <img src="src/assets/offersnest-logo.jpeg" alt="OffersNest" class="h-10 w-10 object-cover rounded">
+      </div>
+      
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#plans" class="text-muted-foreground hover:text-foreground" style="color: hsl(var(--muted-foreground)); transition: color 0.3s;">Plans</a>
+        <a href="#features" class="text-muted-foreground hover:text-foreground" style="color: hsl(var(--muted-foreground)); transition: color 0.3s;">Features</a>
+        <a href="#faq" class="text-muted-foreground hover:text-foreground" style="color: hsl(var(--muted-foreground)); transition: color 0.3s;">FAQ</a>
+      </div>
+
+      <button class="button button-primary">Get Started</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <div class="absolute inset-0" style="background: linear-gradient(180deg, hsl(var(--background)), hsl(var(--background)), hsl(var(--card) / 0.3));"></div>
+    <div class="absolute animate-glow" style="top: 25%; left: 25%; width: 384px; height: 384px; background: hsl(var(--primary) / 0.2); border-radius: 9999px; filter: blur(128px);"></div>
+    <div class="absolute animate-glow animation-delay-2000" style="bottom: 25%; right: 25%; width: 384px; height: 384px; background: hsl(var(--accent) / 0.2); border-radius: 9999px; filter: blur(128px);"></div>
+    
+    <div class="container relative z-10 mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-sm mb-8" style="background: hsl(var(--card) / 0.5); border: 1px solid hsl(var(--border));">
+        <svg class="h-4 w-4" style="color: hsl(var(--primary));" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        <span class="text-sm" style="color: hsl(var(--muted-foreground));">Number 1 Apple Discount Subscription Store - OffersNest</span>
+      </div>
+      
+      <h1 class="text-5xl md:text-7xl font-bold mb-6" style="background: linear-gradient(90deg, hsl(var(--foreground)), hsl(var(--foreground) / 0.7)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+        Listen Now
+      </h1>
+      
+      <p class="text-xl md:text-2xl mb-4 max-w-2xl mx-auto" style="color: hsl(var(--muted-foreground));">
+        Get premium Apple Music subscriptions at unbeatable prices
+      </p>
+      
+      <div class="inline-flex items-center justify-center rounded-2xl bg-gradient-primary p-1 mb-8">
+        <div class="rounded-xl px-8 py-6" style="background: hsl(var(--background));">
+          <p class="text-3xl md:text-5xl font-bold" style="color: hsl(var(--foreground));">
+            Get 12 months for $49.99
+          </p>
+          <p class="mt-2" style="color: hsl(var(--muted-foreground));">Annually, then $10.99/month</p>
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <button class="button button-primary text-lg" style="padding: 1rem 2rem;">
+          Try Apple Music
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+        </button>
+        <button class="button button-outline text-lg" style="padding: 1rem 2rem;">View All Plans</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apple Music Plans Section -->
+  <section id="music-plans" class="container mx-auto px-6 py-20">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: hsl(var(--foreground));">
+        Apple Music Plans
+      </h2>
+      <p class="text-xl max-w-2xl mx-auto" style="color: hsl(var(--muted-foreground));">
+        Stream 100 million songs ad-free. All plans include a 12-month discounted period.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <!-- Apple Music Individual -->
+      <div class="card">
+        <div class="p-8">
+          <div class="relative h-48 mb-6 flex items-center justify-center overflow-hidden rounded-xl" style="background: hsl(var(--card) / 0.5);">
+            <img src="src/assets/apple-music-individual.png" alt="Apple Music Individual" class="h-40 w-40 object-contain">
+          </div>
+          <h3 class="text-2xl font-bold mb-2" style="color: hsl(var(--foreground));">Apple Music Individual</h3>
+          <div class="mb-6">
+            <div class="flex items-baseline gap-2 mb-1">
+              <span class="text-lg line-through" style="color: hsl(var(--muted-foreground));">$119.99</span>
+              <span class="text-4xl font-bold" style="color: hsl(var(--foreground));">$49.99</span>
+            </div>
+            <p class="text-sm" style="color: hsl(var(--muted-foreground));">Annually, then $10.99/month</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-sm" style="color: hsl(var(--muted-foreground));">100 million songs ad-free</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-sm" style="color: hsl(var(--muted-foreground));">Download to listen offline</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-sm" style="color: hsl(var(--muted-foreground));">Personalized recommendations</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-sm" style="color: hsl(var(--muted-foreground));">Listen across all your devices</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-sm" style="color: hsl(var(--muted-foreground));">Spatial Audio with Dolby Atmos</span>
+            </li>
+          </ul>
+          <button class="button button-card">Get Started</button>
+        </div>
+      </div>
+
+      <!-- Apple Music Family (Highlighted) -->
+      <div class="card highlighted">
+        <div class="absolute top-0 left-0 right-0 bg-gradient-primary py-2 text-center rounded-t-xl">
+          <span class="text-sm font-semibold" style="color: hsl(var(--primary-foreground));">MOST POPULAR</span>
+        </div>
+        <div class="p-8 pt-14">
+          <div class="relative h-48 mb-6 flex items-center justify-center overflow-hidden rounded-xl" style="background: hsl(var(--card) / 0.5);">
+            <img src="src/assets/apple-music-family.png" alt="Apple Music Family" class="h-40 w-40 object-contain">
+          </div>
+          <h3 class="text-2xl font-bold mb-2" style="color: hsl(var(--foreground));">Apple Music Family</h3>
+          <div class="mb-6">
+            <div class="flex items-baseline gap-2 mb-1">
+              <span class="text-lg line-through" style="color: hsl(var(--muted-foreground));">$199.99</span>
+              <span class="text-4xl font-bold" style="color: hsl(var(--foreground));">$99.99</span>
+            </div>
+            <p class="text-sm" style="color: hsl(var(--muted-foreground));">Annually, then $16.99/month</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-sm" style="color: hsl(var(--muted-foreground));">Up to 6 people</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-sm" style="color: hsl(var(--muted-foreground));">100 million songs ad-free</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-sm" style="color: hsl(var(--muted-foreground));">Download to listen offline</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-sm" style="color: hsl(var(--muted-foreground));">Personalized recommendations for each family member</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-sm" style="color: hsl(var(--muted-foreground));">Spatial Audio with Dolby Atmos</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-sm" style="color: hsl(var(--muted-foreground));">Share playlists with family</span>
+            </li>
+          </ul>
+          <button class="button button-primary" style="width: 100%;">Get Started</button>
+        </div>
+      </div>
+
+      <!-- Apple Music Student -->
+      <div class="card">
+        <div class="p-8">
+          <div class="relative h-48 mb-6 flex items-center justify-center overflow-hidden rounded-xl" style="background: hsl(var(--card) / 0.5);">
+            <img src="src/assets/apple-music-student.png" alt="Apple Music Student" class="h-40 w-40 object-contain">
+          </div>
+          <h3 class="text-2xl font-bold mb-2" style="color: hsl(var(--foreground));">Apple Music Student</h3>
+          <div class="mb-6">
+            <div class="flex items-baseline gap-2 mb-1">
+              <span class="text-lg line-through" style="color: hsl(var(--muted-foreground));">$59.99</span>
+              <span class="text-4xl font-bold" style="color: hsl(var(--foreground));">$29.99</span>
+            </div>
+            <p class="text-sm" style="color: hsl(var(--muted-foreground));">Annually, then $5.99/month</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-sm" style="color: hsl(var(--muted-foreground));">Verify student status required</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-sm" style="color: hsl(var(--muted-foreground));">100 million songs ad-free</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-sm" style="color: hsl(var(--muted-foreground));">Download to listen offline</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-sm" style="color: hsl(var(--muted-foreground));">Personalized recommendations</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-sm" style="color: hsl(var(--muted-foreground));">Spatial Audio with Dolby Atmos</span>
+            </li>
+          </ul>
+          <button class="button button-card">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apple TV+ Plans Section -->
+  <section id="tv-plans" class="py-20" style="background: hsl(var(--card) / 0.2);">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4" style="color: hsl(var(--foreground));">
+          Apple TV+ Plans
+        </h2>
+        <p class="text-xl max-w-2xl mx-auto" style="color: hsl(var(--muted-foreground));">
+          Award-winning series and films. Exclusive Apple Originals. Cancel anytime.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <!-- Apple TV+ 6-Month Plan (Highlighted) -->
+        <div class="card highlighted">
+          <div class="absolute top-0 left-0 right-0 bg-gradient-primary py-2 text-center rounded-t-xl">
+            <span class="text-sm font-semibold" style="color: hsl(var(--primary-foreground));">MOST POPULAR</span>
+          </div>
+          <div class="p-8 pt-14">
+            <div class="relative h-48 mb-6 flex items-center justify-center overflow-hidden rounded-xl" style="background: hsl(var(--card) / 0.5);">
+              <img src="src/assets/apple-tv-6months.png" alt="Apple TV+ 6-Month Plan" class="h-40 w-40 object-contain">
+            </div>
+            <h3 class="text-2xl font-bold mb-2" style="color: hsl(var(--foreground));">Apple TV+ 6-Month Plan</h3>
+            <div class="mb-6">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="text-lg line-through" style="color: hsl(var(--muted-foreground));">$77.94</span>
+                <span class="text-4xl font-bold" style="color: hsl(var(--foreground));">$35.94</span>
+              </div>
+              <p class="text-sm" style="color: hsl(var(--muted-foreground));">Annually, then $12.99/month</p>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">First 6 months for $5.99/month</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">Award-winning Apple Originals</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">New exclusive shows and movies monthly</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">Watch on all your devices</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">4K HDR and Dolby Atmos</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">Download to watch offline</span>
+              </li>
+            </ul>
+            <button class="button button-primary" style="width: 100%;">Get Started</button>
+          </div>
+        </div>
+
+        <!-- Apple TV+ Annual -->
+        <div class="card">
+          <div class="p-8">
+            <div class="relative h-48 mb-6 flex items-center justify-center overflow-hidden rounded-xl" style="background: hsl(var(--card) / 0.5);">
+              <img src="src/assets/apple-tv-annual.png" alt="Apple TV+ Annual" class="h-40 w-40 object-contain">
+            </div>
+            <h3 class="text-2xl font-bold mb-2" style="color: hsl(var(--foreground));">Apple TV+ Annual</h3>
+            <div class="mb-6">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="text-lg line-through" style="color: hsl(var(--muted-foreground));">$155.88</span>
+                <span class="text-4xl font-bold" style="color: hsl(var(--foreground));">$69.99</span>
+              </div>
+              <p class="text-sm" style="color: hsl(var(--muted-foreground));">Annually, then $12.99/month</p>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">12 months of Apple TV+</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">Save over 50% on annual plan</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">Award-winning originals</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">Ad-free entertainment</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">4K HDR quality</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">Up to 6 simultaneous streams</span>
+              </li>
+            </ul>
+            <button class="button button-card">Get Started</button>
+          </div>
+        </div>
+
+        <!-- Apple TV+ Family Sharing -->
+        <div class="card">
+          <div class="p-8">
+            <div class="relative h-48 mb-6 flex items-center justify-center overflow-hidden rounded-xl" style="background: hsl(var(--card) / 0.5);">
+              <img src="src/assets/apple-tv-family.png" alt="Apple TV+ Family Sharing" class="h-40 w-40 object-contain">
+            </div>
+            <h3 class="text-2xl font-bold mb-2" style="color: hsl(var(--foreground));">Apple TV+ Family Sharing</h3>
+            <div class="mb-6">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="text-lg line-through" style="color: hsl(var(--muted-foreground));">$199.99</span>
+                <span class="text-4xl font-bold" style="color: hsl(var(--foreground));">$99.99</span>
+              </div>
+              <p class="text-sm" style="color: hsl(var(--muted-foreground));">Annually, then $16.99/month</p>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">Share with up to 6 family members</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">Individual profiles for each member</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">Personalized recommendations</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">Parental controls included</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">4K HDR and Dolby Atmos</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="h-5 w-5 flex-shrink-0 mt-0.5" style="color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm" style="color: hsl(var(--muted-foreground));">Watch on unlimited devices</span>
+              </li>
+            </ul>
+            <button class="button button-card">Get Started</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-20" style="border-top: 1px solid hsl(var(--border) / 0.5); background: hsl(var(--card) / 0.3); backdrop-filter: blur(4px);">
+    <div class="container mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="src/assets/offersnest-logo.jpeg" alt="OffersNest" class="h-10 w-10 object-cover rounded">
+          </div>
+          <p class="text-sm mb-3" style="color: hsl(var(--muted-foreground));">
+            Your trusted source for discounted Apple Music and Apple TV+ subscriptions.
+          </p>
+          <div class="space-y-2 text-sm" style="color: hsl(var(--muted-foreground));">
+            <p>New York, NY 10001</p>
+            <p>Los Angeles, CA 90001</p>
+            <p>Chicago, IL 60601</p>
+            <a href="tel:+18885551234" class="block hover:text-foreground" style="transition: color 0.3s;">
+              +1 (888) 555-1234
+            </a>
+            <a href="mailto:support@offersnest.com" class="block hover:text-foreground" style="transition: color 0.3s;">
+              support@offersnest.com
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4" style="color: hsl(var(--foreground));">Products</h4>
+          <ul class="space-y-2">
+            <li><a href="#music-plans" class="text-sm hover:text-foreground" style="color: hsl(var(--muted-foreground)); transition: color 0.3s;">Apple Music Individual</a></li>
+            <li><a href="#music-plans" class="text-sm hover:text-foreground" style="color: hsl(var(--muted-foreground)); transition: color 0.3s;">Apple Music Family</a></li>
+            <li><a href="#music-plans" class="text-sm hover:text-foreground" style="color: hsl(var(--muted-foreground)); transition: color 0.3s;">Apple Music Student</a></li>
+            <li><a href="#tv-plans" class="text-sm hover:text-foreground" style="color: hsl(var(--muted-foreground)); transition: color 0.3s;">Apple TV+ 6-Month Plan</a></li>
+            <li><a href="#tv-plans" class="text-sm hover:text-foreground" style="color: hsl(var(--muted-foreground)); transition: color 0.3s;">Apple TV+ Annual</a></li>
+            <li><a href="#tv-plans" class="text-sm hover:text-foreground" style="color: hsl(var(--muted-foreground)); transition: color 0.3s;">Apple TV+ Family Sharing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4" style="color: hsl(var(--foreground));">Company</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm hover:text-foreground" style="color: hsl(var(--muted-foreground)); transition: color 0.3s;">About Us</a></li>
+            <li><a href="#" class="text-sm hover:text-foreground" style="color: hsl(var(--muted-foreground)); transition: color 0.3s;">Contact</a></li>
+            <li><a href="#" class="text-sm hover:text-foreground" style="color: hsl(var(--muted-foreground)); transition: color 0.3s;">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4" style="color: hsl(var(--foreground));">Legal</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm hover:text-foreground" style="color: hsl(var(--muted-foreground)); transition: color 0.3s;">Terms of Service</a></li>
+            <li><a href="#" class="text-sm hover:text-foreground" style="color: hsl(var(--muted-foreground)); transition: color 0.3s;">Privacy Policy</a></li>
+            <li><a href="#" class="text-sm hover:text-foreground" style="color: hsl(var(--muted-foreground)); transition: color 0.3s;">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8" style="border-top: 1px solid hsl(var(--border) / 0.5);">
+        <p class="text-center text-sm" style="color: hsl(var(--muted-foreground));">
+          © 2024 OffersNest. All rights reserved. Not affiliated with Apple Inc.
+        </p>
+      
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
